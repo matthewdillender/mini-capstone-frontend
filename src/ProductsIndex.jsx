@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export function ProductsIndex(props) {
   return (
     <div>
@@ -5,9 +6,9 @@ export function ProductsIndex(props) {
       {props.products.map((product) => (
         <div key={product.id}>
           <h2>{product.name}</h2>
-          <h2>{product.price}</h2>
           <img src={product.image_url} />
-          <h2>{product.description}</h2>
+          <p>Description: {product.description}</p>
+          <p>Price: {product.price}</p> + <button onClick={() => props.onShowProduct(product)}>More info</button>
         </div>
       ))}
     </div>
